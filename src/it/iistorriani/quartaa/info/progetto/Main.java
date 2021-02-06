@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Benvenuto!\n");
         while(risp>0){
             System.out.println("MENU:\n");
-            System.out.println("1)opzione 1");
+            System.out.println("1)Gioco punteggio");
             System.out.println("2)opzione 2");
             System.out.println("3)opzione 3");
             System.out.println("4)opzione 4");
@@ -26,6 +26,8 @@ public class Main {
 
             switch (risp){
                 case 1:
+                    GiocoPunteggio g1 = new GiocoPunteggio();
+                    g1.gioco();
                     break;
                 case 2:
                     break;
@@ -39,7 +41,5 @@ public class Main {
             }
         }
         System.out.println("CHIUSURA....");
-
-
     }
 }

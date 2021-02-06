@@ -6,7 +6,6 @@
  */
 package it.iistorriani.quartaa.info.progetto;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class GiocoPunteggio {
@@ -33,42 +32,22 @@ public class GiocoPunteggio {
     /**
      * il punteggio aumenta casualmente tra 1 e 3, se annulla e' true il punteggio ritorna a 0
      */
-    public int getPunteggio(){
+    public int setPunteggio(){
         if(annulla == true){
             this.punteggio = 0;
         }
         else{
-            this.punteggio += Math.random()*3;
+            this.punteggio += (int)(Math.random()*3);
         }
         return punteggio;
     }
 
-    public int gioco(){
-        String conferma = "si";
-        String stop = "n";
-        while(punteggio==0 || punteggio<10) {
-                System.out.println(this.getPunteggio());
-                if (this.punteggio > 0) {
-                    System.out.println("continuare? (n=no, qualsiasi cosa=si)");
-                    this.setAnnulla();
-                    conferma = scan.nextLine();
-                }
-                //se arrivo a 10 vinco, di conseguenza formatto tutti i dati
-                if(punteggio >= 10){
-                    conferma = "n";
-                    System.out.println("hai vinto! ;) \n");
-                    this.annulla = false;
-                    this.punteggio = 0;
-
-                }
-                //se 'annulla' e' true il punteggio torna a 0, quindi hai perso
-                else {
-                    conferma = "n";
-                    System.out.println("hai perso :( \n");
-                    this.annulla = false;
-
-                }
-        }
-        return 0;
+    public int getPunteggio() {
+        return this.punteggio;
     }
+
+    public boolean isAnnulla() {
+        return annulla;
+    }
+
 }

@@ -27,7 +27,29 @@ public class Main {
             switch (risp){
                 case 1:
                     GiocoPunteggio g1 = new GiocoPunteggio();
-                    g1.gioco();
+                    boolean stop = false;
+                    while(stop == false) {
+                        if(g1.isAnnulla() == true){
+                            System.out.println("hai perso... :(\n");
+                            stop = true;
+                        }
+                        else{
+                            g1.setAnnulla();
+                            g1.setPunteggio();
+                            if (g1.getPunteggio()>0 && g1.getPunteggio()<10){
+                                System.out.println(g1.getPunteggio());
+                                System.out.println("continuare? (1=si, altro=no)");
+                                int i = scan.nextInt();
+                                if(i!=1){
+                                    stop = true;
+                                }
+                            }
+                            if(g1.getPunteggio()>=10){
+                                System.out.println("Hai vinto! ;)\n");
+                                stop = true;
+                            }
+                        }
+                    }
                     break;
                 case 2:
                     break;

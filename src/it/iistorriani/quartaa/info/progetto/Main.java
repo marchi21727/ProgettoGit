@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        @SuppressWarnings("resource") // per evitare avvertimenti di eclipse nella riga successiva
         Scanner scan = new Scanner(System.in);
         int risp = 1;
         System.out.println("Benvenuto!\n");

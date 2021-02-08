@@ -18,7 +18,7 @@ public class Main {
         while(risp > 0) {
             System.out.println("MENU:\n");
             System.out.println("1) Gioco punteggio");
-            System.out.println("2) Opzione 2");
+            System.out.println("2) Calcola area e volume di una sfera");
             System.out.println("3) Opzione 3");
             System.out.println("4) Opzione 4");
             System.out.println("5) Opzione 5");
@@ -52,7 +52,10 @@ public class Main {
                     }
                     break;
                 case 2:
-                	// TODO
+                	System.out.println("Inserire il raggio della sfera in cm:");
+                	double rag = scan.nextDouble();
+                	String ris = CalcolaSfera.calcola(rag);
+                	System.out.println(ris);
                     break;
                 case 3:
                 	// TODO

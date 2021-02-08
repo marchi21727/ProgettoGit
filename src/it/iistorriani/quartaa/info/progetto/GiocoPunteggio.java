@@ -6,11 +6,7 @@
  */
 package it.iistorriani.quartaa.info.progetto;
 
-import java.util.Scanner;
-
 public class GiocoPunteggio {
-    Scanner scan = new Scanner(System.in);
-
     private int punteggio;
     private boolean annulla;
 
@@ -20,24 +16,24 @@ public class GiocoPunteggio {
     }
 
     /**
-     * tramite una casualita' decido di rimettere il punteggio a 0
+     * tramite una casualità decido di rimettere il punteggio a 0
      */
-    public void setAnnulla (){
+    public void setAnnulla() {
         int y = (int) (Math.random() * 10);
-        if(y==10){
+        if(y == 10) {
             this.annulla = true;
         }
     }
 
     /**
-     * il punteggio aumenta casualmente tra 1 e 3, se annulla e' true il punteggio ritorna a 0
+     * il punteggio aumenta casualmente tra 1 e 3, se annulla è true il punteggio ritorna a 0
      */
-    public int setPunteggio(){
+    public int setPunteggio() {
         if(annulla == true){
             this.punteggio = 0;
         }
-        else{
-            this.punteggio += (int)(Math.random()*3);
+        else {
+            this.punteggio += (int)(Math.random() * 3);
         }
         return punteggio;
     }
@@ -49,5 +45,4 @@ public class GiocoPunteggio {
     public boolean isAnnulla() {
         return annulla;
     }
-
 }

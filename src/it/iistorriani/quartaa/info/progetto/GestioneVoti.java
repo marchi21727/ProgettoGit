@@ -14,8 +14,7 @@ public class GestioneVoti {
         if(media < 6){
             return "Stai andando male";
         }
-        if(media > 5){
+        else
             return "Stai andando bene";
-        }
     }
 }

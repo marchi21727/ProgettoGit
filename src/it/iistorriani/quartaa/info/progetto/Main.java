@@ -1,9 +1,3 @@
-/**
- * classe main, l'utente sceglierà tra le opzioni disponibili cosa far fare al programma,
- * tramite un input da tastiera. ogni scelta è legata a una classe esterna creata da ognuno di noi
- *
- * @author Marchi, Budei, Anghel, Ben, Somma
- */
 package it.iistorriani.quartaa.info.progetto;
 
 import java.util.Scanner;
@@ -19,12 +13,9 @@ public class Main {
             System.out.println("MENU:\n");
             System.out.println("1) Gioco punteggio");
             System.out.println("2) Calcola area e volume di una sfera");
-<<<<<<< Updated upstream
             System.out.println("3) Gestore voti");
-=======
-            System.out.println("3) Gioco morra-cinese (tu VS pc)");
->>>>>>> Stashed changes
-            System.out.println("4) Opzione 4");
+            System.out.println("4) Gioco morra-cinese (tu VS pc)");
+            System.out.println("5) Sasso Carta Forbice");
             System.out.println("5) Opzione 5");
             System.out.println("0) Chiudi programma");
             risp = scan.nextInt();
@@ -32,8 +23,8 @@ public class Main {
                 case 1:
                     GiocoPunteggio g1 = new GiocoPunteggio();
                     boolean stop = false;
-                    while(stop == false) {
-                        if(g1.isAnnulla() == true) {
+                    while(!stop) {
+                        if(g1.isAnnulla()) {
                             System.out.println("hai perso... :(\n");
                             stop = true;
                         }
@@ -62,13 +53,50 @@ public class Main {
                 	System.out.println(ris);
                     break;
                 case 3:
-                	GiocoMorraCinese.GiocoMC();
+
                     break;
                 case 4:
-                	// TODO
+                    GiocoMorraCinese.GiocoMC();
                     break;
                 case 5:
-                	// TODO
+                    Scanner in = new Scanner(System.in);
+                    System.out.println("Sasso Carta Forbice!");
+
+                    //Use a while(true) loop and only break the loop if the user wants to quit
+                    while(true) {
+
+                        //Get the user's move through user input
+                        System.out.print("Scrivi sasso, carta o forbice per giocare, oppure esci per uscire.");
+                        String myMove = in.nextLine();
+
+                        //Check if the user wants to quit the game
+                        if(myMove.equals("esci")) {
+                            break;
+                        }
+                        //Check if the user's move is valid (rock, paper, or scissors)
+                        if(!myMove.equals("sasso") && !myMove.equals("carta") && !myMove.equals("forbice")) {
+                            System.out.println("Invalido riprova");
+                        } else {
+                            int rand = (int)(Math.random()*3);
+                            String opponentMove;
+                            if(rand == 0) {
+                                opponentMove = "sasso";
+                            } else if(rand == 1) {
+                                opponentMove = "carta";
+                            } else {
+                                opponentMove = "forbice";
+                            }
+                            System.out.println("Mossa dell'avversario: " + opponentMove);
+
+                            if(myMove.equals(opponentMove)) {
+                                System.out.println("PAREGGIO");
+                            } else if((myMove.equals("sasso") && opponentMove.equals("forbice")) || (myMove.equals("forbice") && opponentMove.equals("carta")) || (myMove.equals("carta") && opponentMove.equals("sasso"))) {
+                                System.out.println("HAI VINTO");
+                            } else {
+                                System.out.println("HAI PERSO");
+                            }
+                        }
+                    }
                     break;
                 default: System.out.println("Inserire i numeri richiesti!\n");
             }

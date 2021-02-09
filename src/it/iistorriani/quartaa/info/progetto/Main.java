@@ -19,7 +19,7 @@ public class Main {
             System.out.println("MENU:\n");
             System.out.println("1) Gioco punteggio");
             System.out.println("2) Calcola area e volume di una sfera");
-            System.out.println("3) Opzione 3");
+            System.out.println("3) Gestore voti");
             System.out.println("4) Opzione 4");
             System.out.println("5) Opzione 5");
             System.out.println("0) Chiudi programma");

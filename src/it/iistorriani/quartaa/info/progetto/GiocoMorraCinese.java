@@ -16,6 +16,7 @@ public class GiocoMorraCinese {
 				Scanner(System.in);
 		System.out.println("Inserire scelta (scrivere 'carta', 'sasso' o 'forbici')");
 		String scelta = tastiera.next();
+		//possibilità
 		if(scelta.equals("carta") && numCasuale == 1) {
 			System.out.println("carta!");
 			System.out.println("PAREGGIO!");

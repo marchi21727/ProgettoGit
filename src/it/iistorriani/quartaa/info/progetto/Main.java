@@ -19,7 +19,7 @@ public class Main {
             System.out.println("0) Chiudi programma");
             risp = scan.nextInt();
             switch (risp) {
-                case 1 -> {
+				case 1 : {
                     GiocoPunteggio g1 = new GiocoPunteggio();
                     boolean stop = false;
                     while (!stop) {
@@ -44,41 +44,41 @@ public class Main {
                         }
                     }
                 }
-                case 2 -> {
+				case 2 : {
                     System.out.println("Inserire il raggio della sfera in cm:");
                     double rag = scan.nextDouble();
                     String ris = CalcolaSfera.calcola(rag);
                     System.out.println(ris);
                 }
-                case 3 -> {
+				case 3 : {
                     int[] voti = new int[5];
                     for (int i = 0; i < 5; i++) {
                         voti[i] = scan.nextInt();
                     }
                     GestioneVoti.calcolaMedia(voti);
                 }
-                case 4 -> GiocoMorraCinese.GiocoMC();
-                case 5 -> {
+				case 4 : GiocoMorraCinese.GiocoMC();
+				case 5 : {
                     System.out.println("Ciao, sono Bot, parla con me e ti rispoderò");
                     String frase;
                     int i = 1;
                     while (i != 0) {
                         frase = scan.next();
                         switch (frase) {
-                            case "ciao" -> System.out.println("ciao anche a te! Come va?");
-                            case "bene" -> System.out.println("Sono contento che va tutto bene");
-                            case "come-va" -> System.out.println("Bene, tu?");
-                            case "arrivederci" -> {
+                            if "ciao" -> System.out.println("ciao anche a te! Come va?");  //controllate qui, fate funzionare gli if per favore (da sami)
+                            if "bene" -> System.out.println("Sono contento che va tutto bene"); //controllate qui, fate funzionare gli if per favore (da sami)
+                            if "come-va" -> System.out.println("Bene, tu?"); //controllate qui, fate funzionare gli if per favore (da sami)
+                            if "arrivederci" -> { //controllate qui, fate funzionare gli if per favore (da sami)
                                 System.out.println("a presto!");
                                 i = 0;
                             }
 
-                            default -> System.out.println("Non comprendo ripeti");
+                            default : System.out.println("Non comprendo ripeti");
                         }
                     }
 
                 }
-                default -> System.out.println("Inserire i numeri richiesti!\n");
+                default : System.out.println("Inserire i numeri richiesti!\n");
             }
             System.out.println("CHIUSURA...");
         }

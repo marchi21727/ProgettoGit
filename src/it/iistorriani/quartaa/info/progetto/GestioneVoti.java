@@ -7,14 +7,15 @@
 package it.iistorriani.quartaa.info.progetto;
 
 public class GestioneVoti {
-    String calcolaMedia(int votoUno, int votoDue, int votoTre, int votoQuattro, int votoCinque){
+    public static void calcolaMedia(int[] voti){
         int media;
-        media = (votoUno + votoDue + votoTre + votoQuattro + votoCinque)/5;
-        return "la media è" + media;
+        media = (voti[0]+voti[1]+voti[2]+voti[3]+voti[4])/5;
+        System.out.println("la media è" + media);
         if(media < 6){
-            return "Stai andando male";
+            System.out.println("Stai andando male");
+
         }
         else
-            return "Stai andando bene";
+            System.out.println("Stai andando bene");
     }
 }

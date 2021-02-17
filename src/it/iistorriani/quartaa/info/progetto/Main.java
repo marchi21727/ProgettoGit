@@ -65,10 +65,13 @@ public class Main {
                     while (i != 0) {
                         frase = scan.next();
                         switch (frase) {
-                            if "ciao" -> System.out.println("ciao anche a te! Come va?");  //controllate qui, fate funzionare gli if per favore (da sami)
-                            if "bene" -> System.out.println("Sono contento che va tutto bene"); //controllate qui, fate funzionare gli if per favore (da sami)
-                            if "come-va" -> System.out.println("Bene, tu?"); //controllate qui, fate funzionare gli if per favore (da sami)
-                            if "arrivederci" -> { //controllate qui, fate funzionare gli if per favore (da sami)
+                            case "ciao" : System.out.println("ciao anche a te! Come va?");
+                            break;
+                            case "bene" : System.out.println("Sono contento che va tutto bene");
+                            break;
+                            case "come-va" : System.out.println("Bene, tu?");
+                            break;
+                            case "arrivederci" : {
                                 System.out.println("a presto!");
                                 i = 0;
                             }
